@@ -148,7 +148,7 @@ AUTH_USER_MODEL = "users.User"
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.Authentication.JWTAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     )
 }
 
@@ -162,8 +162,8 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'SIGNING_KEY': env("SIGNING_KEY"),
-    'AUTH_HEAER_NAME': "HTTP_AUTHORIZATION",
-    'AUTH_TOKEN_CLASSES':("rest_framework_simplejwt.tokens.AccessToken")
+    'AUTH_HEADER_NAME': "HTTP_AUTHORIZATION",
+    'AUTH_TOKEN_CLASSES':("rest_fram ework_simplejwt.tokens.AccessToken")
 
 }
 
@@ -173,7 +173,7 @@ DJOSER = {
     'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
     'SEND_CONFIRMATION_EMAIL': True,
-    'PASSWORD_RESET_CONFIRMATION_URL': "password/reset/confirm/{uid}/{token}",
+    'PASSWORD_RESET_CONFIRM_URL': "password/reset/confirm/{uid}/{token}",
     'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_RETYPE': True,
     'USERNAME_RESET_CONFIRM_URL': "email/reset/confirm/{uid}/{token}",
@@ -184,7 +184,7 @@ DJOSER = {
         'user': 'apps.users.serializers.UserSerializer',
         'current_user': 'apps.users.serializers.UserSerializer',
         'user_delete': 'apps.users.serializers.UserDeleteSerializer',
-    }
+    },
 
 }
 
