@@ -16,10 +16,10 @@ class CustomUserManager(BaseUserManager):
             raise ValueError(_('Users must submit a username'))
         
         if not first_name:
-            raise ValueError(_('Usere must submit a first name'))
+            raise ValueError(_('Users must submit a first name'))
 
         if not last_name:
-            raise ValueError(_('Usere must submit a last name'))
+            raise ValueError(_('Users must submit a last name'))
         
         if email:
             email = self.normalize_email(email)
@@ -27,7 +27,7 @@ class CustomUserManager(BaseUserManager):
         else:
             raise ValueError(_('Base User Account: An email address is required'))
 
-        user = self. model(
+        user = self.model(
             username = username,
             first_name = first_name,
             last_name = last_name,
@@ -39,14 +39,14 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault("is_staff",False)
         extra_fields.setdefault("is_superuser", False)
         user.save(using=self._db)
-        return usser
+        return user
 
     def create_superuser(self, username, first_name, last_name, email, password, **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault("is_active", True)
 
-        if extra_filds.get("is_staff") is not True:
+        if extra_fields.get("is_staff") is not True:
             raise ValueError(_("Superusers must have is_staff=True"))
 
         if extra_fields.get("is_superuser") is not True:
@@ -61,7 +61,7 @@ class CustomUserManager(BaseUserManager):
         else:
             raise ValueError(_("Base User Account: An email address is required"))
 
-        user = selfmode(
+        user = self.model(
             username = username,
             first_name = first_name,
             last_name = last_name,
