@@ -53,8 +53,6 @@ THIRD_PARTY_APPS = [
    'phonenumber_field',
    'djoser',
    'rest_framework_simplejwt',
-
-   
 ]
 
 LOCAL_APPS = ["apps.common", "apps.users", "apps.profiles", "apps.ratings", "apps.properties", "apps.tenants"]
@@ -163,7 +161,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'SIGNING_KEY': env("SIGNING_KEY"),
     'AUTH_HEADER_NAME': "HTTP_AUTHORIZATION",
-    'AUTH_TOKEN_CLASSES':("rest_fram ework_simplejwt.tokens.AccessToken")
+    'AUTH_TOKEN_CLASSES':("rest_framework_simplejwt.tokens.AccessToken",),
 
 }
 
@@ -219,7 +217,7 @@ logging.config.dictConfig({
         #console handler
         "console": {
             "class": "logging.StreamHandler",
-            "formatter": "console",           
+            "formatter": "console",
         },
         #file handler
         "file": {
@@ -241,7 +239,7 @@ logging.config.dictConfig({
         "apps": {
             "level": "INFO", "handlers":["console"], "propagate":False
         },
-        #Django server formaters
+        #Django server formatters
         "django.server": DEFAULT_LOGGING["loggers"]["django.server"],
     }
 

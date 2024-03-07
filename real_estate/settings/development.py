@@ -8,8 +8,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = env("EMAIL_PORT")
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-#EMAIL_USE_SSL = True
-DEFAULT_FROM_EMAIL = "info@magnihomes.com"
+DEFAULT_FROM_EMAIL = "info@magni-homes.com"
 DOMAIN = env("DOMAIN")
 SITE_NAME = "Magni Homes"
 

@@ -40,7 +40,7 @@ class UserSerializer(serializers.ModelSerializer):
             "phone_number",
             "country"
             "city",
-            "top_seller"            
+            "top_seller"
         ]
 
     def get_first_name(self, obj):

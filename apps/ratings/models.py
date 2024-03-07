@@ -15,7 +15,7 @@ class Range(models.IntegerChoices):
 class Rating(TimeStampUUIDModel):
 
 
-        rater = models.ForeignKey(AUTH_USER_MODEL, verbose_name=_('User provideing the rating'), on_delete=models.SET_NULL, null=True)
+        rater = models.ForeignKey(AUTH_USER_MODEL, verbose_name=_('User providing the rating'), on_delete=models.SET_NULL, null=True)
 
         agent = models.ForeignKey(Profile, verbose_name=_('Agent being rated'), related_name='agent_review', on_delete=models.SET_NULL, null=True)
 

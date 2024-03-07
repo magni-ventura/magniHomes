@@ -42,7 +42,7 @@ class UserAdmin(BaseUserAdmin):
                     "is_staff", 
                     "is_superuser", 
                     "groups", 
-                    "user_permisions",
+                    "user_permissions",
                 )
             },
         ),
