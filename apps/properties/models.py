@@ -38,14 +38,13 @@ class Property(TimeStampUUIDModel):
         COMMERCIAL = "Commercial", _("Commercial")
         OTHER = "Other", _("Other")
 
-    user = (
-            models.ForeignKey(
-                User,
-                verbose_name=_("Agent, Seller or Buyer"),
-                related_name = "agent_buyer",
-                on_delete=models.DO_NOTHING
-            ),
-        )
+    user = models.ForeignKey(
+        User,
+        verbose_name=_("Agent, Seller or Buyer"),
+        related_name = "agent_buyer",
+        on_delete=models.DO_NOTHING
+        ),
+
     title = models.CharField(
         verbose_name=_("Property Title"),
         max_length=250
@@ -182,7 +181,7 @@ class Property(TimeStampUUIDModel):
 
     def save(self, *args, **kwargs):
         self.title = str.title(self.title)
-        self.description = str.description(self.description)
+        self.description = str.capitalize(self.description)
         self.ref_code = "".join(random.choices(string.ascii_uppercase + string.digits, k=20))
         super(Property, self).save(*args, **kwargs)
 

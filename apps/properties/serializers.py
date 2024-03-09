@@ -1,11 +1,11 @@
 from django_countries.serializer_fields import CountryField
-from django_countries.serializer import CountryFieldMixin
+from django_countries.serializers import CountryFieldMixin
 from rest_framework import serializers
 from .models import Property, PropertyViews
 
 # Register your models here.
 
-class PropertySerializer(serializer.modelsSerializer):
+class PropertySerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     country = CountryField(name_only=True)
 

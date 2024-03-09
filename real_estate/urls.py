@@ -28,8 +28,10 @@ urlpatterns = [
 
     path("api/v1/profile/", include("apps.profiles.urls")),
 
+    path("api/v1/properties/", include("apps.properties.urls")),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_header = "MagniHomes Admin"
+admin.site.site_header = "Magni Homes Admin"
 admin.site.site_title = "Magni Homes Portal"
 admin.site.index_title = "Welcome to The Magni Homes Portal"
