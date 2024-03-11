@@ -142,3 +142,9 @@ Werkzeug==2.3.8
 wsproto==1.2.0
 WTForms==3.1.2
 zipp==3.17.0
+celery
+flower
+django-celery-email
+argh
+PyYAML
+Watchdog
