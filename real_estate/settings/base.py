@@ -53,7 +53,7 @@ THIRD_PARTY_APPS = [
    'phonenumber_field',
    'djoser',
    'rest_framework_simplejwt',
-   #'djcelery_email',
+   'djcelery_email',
 ]
 
 LOCAL_APPS = ["apps.common", "apps.users", "apps.profiles", "apps.ratings", "apps.enquiries", "apps.properties", "apps.tenants"]

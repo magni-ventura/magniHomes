@@ -3,15 +3,21 @@ from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.utils.translation import gettext_lazy as _
 
+#Base user manager
+#The Underscore_ is meant for translation if need be
 class CustomUserManager(BaseUserManager):
-
+    #Validate email
     def email_validator(self, email):
         try:
+            #validate email
             validate_email(email)
+        #Raise a Value Error if email is not valid
         except ValidationError:
             raise ValueError(_('You must provide a valid email address'))
 
+    #Create User Account and pass in the fields
     def create_user(self, username, first_name, last_name, email, password, **extra_fields):
+        #Create and save a user with the email password combination
         if not username:
             raise ValueError(_('Users must submit a username'))
         
@@ -27,6 +33,7 @@ class CustomUserManager(BaseUserManager):
         else:
             raise ValueError(_('Base User Account: An email address is required'))
 
+        #User Model
         user = self.model(
             username = username,
             first_name = first_name,
@@ -35,12 +42,15 @@ class CustomUserManager(BaseUserManager):
             **extra_fields
         )
 
+        #Set Password
         user.set_password(password)
         extra_fields.setdefault("is_staff",False)
         extra_fields.setdefault("is_superuser", False)
         user.save(using=self._db)
         return user
 
+    #Creating a Super User account
+    #Create and save a user with the email password combination
     def create_superuser(self, username, first_name, last_name, email, password, **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
@@ -61,6 +71,7 @@ class CustomUserManager(BaseUserManager):
         else:
             raise ValueError(_("Base User Account: An email address is required"))
 
+        #SuperUser Model
         user = self.model(
             username = username,
             first_name = first_name,
@@ -68,6 +79,7 @@ class CustomUserManager(BaseUserManager):
             email = email,
             **extra_fields
         )
+        #Set Password
         user.set_password(password)
         extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
