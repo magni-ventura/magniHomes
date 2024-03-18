@@ -22,7 +22,7 @@ from django.urls import path, include
 urlpatterns = [
     path('magnihomes/', admin.site.urls),
 
-    path("api/v1/auth", include("djoser.urls")),
+    path("api/v1/auth/", include("djoser.urls")),
 
     path("api/v1/auth/", include("djoser.urls.jwt")),
 
@@ -36,6 +36,6 @@ urlpatterns = [
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_header = "Magni Homes Admin"
-admin.site.site_title = "Magni Homes Portal"
-admin.site.index_title = "Welcome to The Magni Homes Portal"
+admin.site.site_header = "Magni Homes Admin",
+admin.site.site_title = "Magni Homes Portal",
+admin.site.index_title = "Welcome to The Magni Homes Portal",
