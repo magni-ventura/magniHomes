@@ -145,12 +145,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "users.User"
 
+#Implementing Simple Jwt Token Authentication
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     )
 }
-
+#Configure the JWTAuthentication
 from datetime import timedelta
 
 SIMPLE_JWT = {
@@ -158,7 +160,9 @@ SIMPLE_JWT = {
         "Bearer",
         "JWT",
     ),
+    #Configure the AccessToken Lifetime
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
+    #Configure the AccessToken Lifetime
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'SIGNING_KEY': env("SIGNING_KEY"),
     'AUTH_HEADER_NAME': "HTTP_AUTHORIZATION",

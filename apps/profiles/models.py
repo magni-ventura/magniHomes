@@ -37,7 +37,7 @@ class Profile(TimeStampUUIDModel):
 
     is_seller = models.BooleanField(verbose_name=_('Seller'), default=False, help_text=_('Are you looking to Sell a Property?'))
 
-    is_agent = models.BooleanField(verbose_name=_('Agent'), default=False, help_text=_('Are you looking to Market a Property?'))
+    is_agent = models.BooleanField(verbose_name=_('Agent'), default=False, help_text=_('Are you an Agent?'))
 
     top_agent = models.BooleanField(verbose_name=_('Top Agent'), default=False, help_text=_('Are you looking to Agent a Property?'))
 

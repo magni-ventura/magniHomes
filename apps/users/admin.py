@@ -19,7 +19,7 @@ class UserAdmin(BaseUserAdmin):
             _("Login Credentials"),
             {
                 "fields": (
-                    "email", 
+                    "email",
                     "password",
                     )
             },
@@ -28,8 +28,8 @@ class UserAdmin(BaseUserAdmin):
             _("Personal Information"),
             {
                 "fields": (
-                    "username", 
-                    "first_name", 
+                    "username",
+                    "first_name",
                     "last_name",
                 )
             },
@@ -38,10 +38,10 @@ class UserAdmin(BaseUserAdmin):
             _("Permissions and Groups"),
             {
                 "fields": (
-                    "is_active", 
-                    "is_staff", 
-                    "is_superuser", 
-                    "groups", 
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
                     "user_permissions",
                 )
             },
@@ -50,12 +50,12 @@ class UserAdmin(BaseUserAdmin):
             _("Important Dates"),
             {
                 "fields": (
-                    "last_login", 
+                    "last_login",
                     "date_joined",
                 )
             }
         ),
-        
+
     )
     add_fieldsets = (
         (
@@ -63,10 +63,10 @@ class UserAdmin(BaseUserAdmin):
             {
                 "classes": ("wide",),
                 "fields": (
-                    "email", 
-                    "password1", 
-                    "password2", 
-                    "is_staff", 
+                    "email",
+                    "password1",
+                    "password2",
+                    "is_staff",
                     "is_active",
                     ),
             },

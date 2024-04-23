@@ -18,7 +18,7 @@ class User(AbstractBaseUser, PermissionsMixin):
      is_staff = models.BooleanField(default=True)
      is_active = models.BooleanField(default=True)
      date_joined = models.DateTimeField(default=timezone.now)
-     
+
      #Username field the name of the user and  is set to the email address of the user
      USERNAME_FIELD = "email"
      REQUIRED_FIELDS = ["username", "first_name", "last_name"]

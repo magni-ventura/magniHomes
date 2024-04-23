@@ -34,7 +34,7 @@ urlpatterns = [
 
     path("api/v1/enquiries/", include("apps.enquiries.urls")),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 admin.site.site_header = "Magni Homes Admin",
 admin.site.site_title = "Magni Homes Portal",
