@@ -20,6 +20,17 @@ services:
     networks:
       - eatate-react
 
+  client:
+    build:
+      context: .././client
+      dockerfile: Dockerfile.driver
+    restart: on-failure
+    volumes:
+      -.././client:/app
+      - /app/node_modules
+    networks:
+      - magniHomes
+
   postgres-db:
     image: postgres:13.4
     ports:
